@@ -1,0 +1,12 @@
+version: '3'
+services:
+  db:
+    image: mongo:5
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - ./data/db:/data/db
+    environment:
+      MONGODB_DATABASE: user
+      MONGODB_STRING_CONNECTION: ${MONGODB_STRING_CONNECTION}
